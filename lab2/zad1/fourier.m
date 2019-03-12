@@ -1,9 +1,9 @@
-Y = fft(x);     % transformata Fouriera
+%Y = fft(x);     % transformata Fouriera
 
-A = abs(Y);     % amplituda sygna³u
-A = A/L;        % normalizacja amplitudy
-A = A(1:L/2+1); % wyciêcie istotnej czêœci spektrum
-A(2:end-1) = 2*A(2:end-1);
+A = abs(Y);     % amplituda sygnaï¿½u
+%A = A/L;        % normalizacja amplitudy
+%A = A(1:L/2+1); % wyciï¿½cie istotnej czï¿½ci spektrum
+%A(2:end-1) = 2*A(2:end-1);
 
-F = angle(Y);   % faza sygna³u
-F = F(1:L/2+1); % wyciêcie istotnej czêœci spektrum
+F = angle(Y);   % faza sygnaï¿½u
+F = F(1:L/2+1); % wyciï¿½cie istotnej czï¿½ci spektrum

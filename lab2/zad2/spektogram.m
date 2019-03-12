@@ -1,7 +1,7 @@
-% x - sygna³ 
-% 128 - d³ugoœæ okna analizy
-% 64 - nak³adanie pomiêdzy kolejnymi oknami
-% [] - iloœæ punktów FFT na okno (domyœlnie)
-% Fs - czêstotliwoœæ próbkowania sygna³u
-% 'yaxis' - czêtotliwoœci na osi y, czas na osi x
-spectrogram(x, 128, 64, [], Fs, 'yaxis');
+% x - sygnaï¿½ 
+% 128 - dï¿½ugoï¿½ï¿½ okna analizy
+% 64 - nakï¿½adanie pomiï¿½dzy kolejnymi oknami
+% [] - iloï¿½ï¿½ punktï¿½w FFT na okno (domyï¿½lnie)
+% Fs - czï¿½stotliwoï¿½ï¿½ prï¿½bkowania sygnaï¿½u
+% 'yaxis' - czï¿½totliwoï¿½ci na osi y, czas na osi x
+spectrogram(real, 128, 64, [], Fs, 'yaxis');

@@ -1,14 +1,14 @@
 % Parametry systemu
-Fs = 1000;     % Czêstotliwoœæ próbkowania [Hz]
-T = 1/Fs;      % Okres próbkowania [s]
-L = 1000;      % D³ugoœæ sygna³u (liczba próbek)
+Fs = 1000;     % Czï¿½stotliwoï¿½ï¿½ prï¿½bkowania [Hz]
+T = 1/Fs;      % Okres prï¿½bkowania [s]
+L = 1000;      % Dï¿½ugoï¿½ï¿½ sygnaï¿½u (liczba prï¿½bek)
 t = (0:L-1)*T; % Podstawa czasu
 
-% Przygotowanie sygna³u
+% Przygotowanie sygnaï¿½u
 N = 3;               % Liczba sinusoid w mieszaninie
 A = [1.0   0.4  0.8] % Amplitudy kolejnych sinusoid
-B = [ 15    27   83] % Czêstotliwoœci kolejnych sygna³ów [Hz]
-C = [  0 -pi/3 pi/7] % Przesuniêcia fazowe kolejnych sygna³ów
+B = [ 15    27   83] % Czï¿½stotliwoï¿½ci kolejnych sygnaï¿½ï¿½w [Hz]
+C = [  0 -pi/3 pi/7] % Przesuniï¿½cia fazowe kolejnych sygnaï¿½ï¿½w
 
 
 x = zeros(size(t));
