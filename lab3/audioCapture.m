@@ -1,11 +1,11 @@
 disp('Speak into microphone now.')
 tic;
-audio = [];
-order = [];
+audio = []; %calosc nagrania docelowo do usuniecia
+order = []; %bufor na trwajacy rozkaz
 n = 0;
-cale = {};
+orders = {}; %wszystkie rozkazy
 j = 0;
-while toc<8
+while toc<8 %docelowo nieskonczona petla
     n = 0;
     acq = deviceReader();
     audio = [audio, acq'];
@@ -19,7 +19,7 @@ while toc<8
     else
         if size(order,2)>20000
             j = j + 1;
-            cale{j}=order;
+            orders{j}=order; % docelowo przekazanie do funkcji
         end
         order = [];
     end
