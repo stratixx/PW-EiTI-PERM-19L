@@ -7,8 +7,9 @@ orders = {}; %wszystkie rozkazy
 j = 0;
 framesMinValueN = [];
 acqLength = [];
+acqData = [];
 
-while toc<8 %docelowo nieskonczona petla
+while toc<20 %docelowo nieskonczona petla
     n = 0;
     acq = deviceReader();
     audio = [audio, acq'];
@@ -17,7 +18,7 @@ while toc<8 %docelowo nieskonczona petla
             n = n + 1;
         end
     end
-    acqLength = [acqLength, acq];
+    acqData = [acqData, acq];
     framesMinValueN = [framesMinValueN, n];
     if n>=minSamples
         order = [order, acq'];
