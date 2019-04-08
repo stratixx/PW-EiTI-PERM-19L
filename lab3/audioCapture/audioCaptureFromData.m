@@ -38,6 +38,7 @@ for k=1:size(acqData,2) %docelowo nieskonczona petla
         
         j = j + 1;
         disp([num2str(j), '. sound detected...']);
+        %voiceRecognition(order, Fs);
         orders{j}=order; % docelowo przekazanie do funkcji
         order = [];
         noiseTimer = 0;

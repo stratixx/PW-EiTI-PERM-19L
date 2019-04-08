@@ -1,3 +1,4 @@
+function [spectrogram_] = mySpectrogram(data, Fs)
 % x - sygna� 
 % 128 - d�ugo�� okna analizy
 % 64 - nak�adanie pomi�dzy kolejnymi oknami
@@ -5,11 +6,8 @@
 % Fs - cz�stotliwo�� pr�bkowania sygna�u
 % 'yaxis' - cz�totliwo�ci na osi y, czas na osi x
 
-spectData={};
-for n=1:12
-figure(n)
-spectData{n} =  spectrogram(data{n}, floor(length(data{n})/64), 16, [], Fs, 'yaxis');
-%spectData{n} =  spectrogram(data{n}, 100, 32, [], Fs, 'yaxis');
+%figure(1)
+spectrogram_ =  spectrogram(data, floor(length(data)/64), 16, [], Fs, 'yaxis');
 
+%close all;
 end
-close all;
