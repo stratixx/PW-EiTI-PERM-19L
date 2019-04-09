@@ -1,3 +1,3 @@
 % x - nagranie
 % Fs - cz�stotliwo�� pr�bkowania 
-data{12} = audioread('selected/stop/stop4.wav');
+[audio Fs] = audioread('source/go stop run kondziu 1.m4a');

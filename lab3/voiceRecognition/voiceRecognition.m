@@ -6,8 +6,8 @@ function [command] = voiceRecognition(sample,Fs)
 %patterns zawiera strukturê z przypisan¹ komend¹ tekstowo i g³osowo
 load('patterns.mat');
 command = '';
-scoreThreshold = 10;
-score=[]
+scoreThreshold = 1e3;
+score=ones(1,length(patterns))*1e10;
 %porównaj zestaw wzorców komend
 for n=1:length(patterns)
     %spektogram
@@ -15,24 +15,23 @@ for n=1:length(patterns)
     %wyznaczenie œrodka masy czêstotliwoœci
     massCenter_ = massCenter(spectrogram_);
     %porównaj ka¿dy wzorzec komendy
+    score(n) = 0;
     for k=1:length(patterns(n).pattern)   
-        score(n, k) = patternRecognition(cell2mat(patterns(n).pattern(k)), massCenter_);
+        score(n) = score(n) + patternRecognition((patterns(n).pattern{k}), massCenter_);
     end
-%     score = 1;
-%     
-%     
-%     if(score>scoreThreshold)    
-%         command = patterns(n).text;
-%         break;
-%     end
+    score(n) = score(n) / length(patterns(n).pattern) ;
 end
 
-[scoreSorted scoreIndex] = sort(mean(score'));
+[scoreSorted scoreIndex] = sort(score);
 
 scoreSorted 
 scoreIndex
+score = scoreSorted(1);
 
-command = patterns(scoreIndex(1)).text;
+
+if(score<scoreThreshold )    
+    command = patterns(scoreIndex(1)).text;
+end
 
 % mesh(1:length(patterns(n).pattern),1:length(patterns),score)
 % xlabel('patterns')
