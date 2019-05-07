@@ -1,0 +1,6 @@
+
+bpFilt = designfilt('bandpassfir', 'FilterOrder', 10, ...
+             'CutoffFrequency1', 1000, 'CutoffFrequency2', 10000,...
+             'SampleRate', Fs);
+         
+         
