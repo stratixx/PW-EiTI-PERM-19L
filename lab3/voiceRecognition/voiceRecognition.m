@@ -1,20 +1,20 @@
 function [command] = voiceRecognition(sample,Fs)
-%voiceRecognition Rozpoznawanie komend g³osowych
+%voiceRecognition Rozpoznawanie komend gï¿½osowych
 %usage:  command = voiceRecognition(sample,Fs)
-%zwraca napis zawieraj¹cy rozpoznan¹ komendê
+%zwraca napis zawierajï¿½cy rozpoznanï¿½ komendï¿½
 
-%patterns zawiera strukturê z przypisan¹ komend¹ tekstowo i g³osowo
-load('patterns.mat');
+%patterns zawiera strukturï¿½ z przypisanï¿½ komendï¿½ tekstowo i gï¿½osowo
+load('patternsCuted.mat');
 command = '';
 scoreThreshold = 1e3;
 score=ones(1,length(patterns))*1e10;
-%porównaj zestaw wzorców komend
+%porï¿½wnaj zestaw wzorcï¿½w komend
 for n=1:length(patterns)
     %spektogram
     spectrogram_ = mySpectrogram( sample, Fs );
-    %wyznaczenie œrodka masy czêstotliwoœci
+    %wyznaczenie ï¿½rodka masy czï¿½stotliwoï¿½ci
     massCenter_ = massCenter(spectrogram_);
-    %porównaj ka¿dy wzorzec komendy
+    %porï¿½wnaj kaï¿½dy wzorzec komendy
     score(n) = 0;
     for k=1:length(patterns(n).pattern)   
         score(n) = score(n) + patternRecognition((patterns(n).pattern{k}), massCenter_);
