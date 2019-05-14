@@ -1,7 +1,11 @@
-imageName = 'raw/3.jpg';
+function [imgBlur] = blur( img )
 
-img = imread(imageName); % Sample image.
+%imageName = 'raw/3.jpg';
+
+%img = imread(imageName); % Sample image.
 windowWidth = 45; % Whatever you want.  More blur for larger numbers.
 kernel = ones(windowWidth) / windowWidth ^ 2;
-img = imfilter(img, kernel); % Blur the image.
-imshow(img); % Display it.
+imgBlur = imfilter(img, kernel); % Blur the image.
+%imshow(imgBlur); % Display it.
+
+end
