@@ -2,7 +2,7 @@ function [imgMasked] = HSVThreshold( imgHSV )
 
 imgMasked = imgHSV;
 
-threshold = mode(imgHSV,[1 2]);
+threshold = mode(imgHSV,[3])
 
 imgR = imgHSV(:,:,1);
 imgG = imgHSV(:,:,2);
