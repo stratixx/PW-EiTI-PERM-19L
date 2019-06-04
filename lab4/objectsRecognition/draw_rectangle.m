@@ -1,4 +1,4 @@
-function[]= draw_rectangle(center_location,L,H,theta,rgb)
+function[rotPoints]= draw_rectangle(center_location,L,H,theta,rgb)
 center1=center_location(1);
 center2=center_location(2);
 R= ([cosd(theta) -sind(theta); sind(theta) cosd(theta)]);
