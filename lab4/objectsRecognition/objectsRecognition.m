@@ -1,7 +1,7 @@
 %rysuje dane z filterRegions
 load('processedImgBlurRGBSmall.mat');
 load('imgRGBSmall.mat');
-
+addpath('colornames/');
 imshow(imgRGBSmall)
 
 circles = properties(abs([properties.MajorAxisLength]-[properties.EquivDiameter])<8, :);
