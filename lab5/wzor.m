@@ -32,14 +32,14 @@ for nx=1:size(imgDepth, 2)
     end
 end
 
-% figure(1);
-% pcshow([x(:),y(:),z(:)]);
-% title('Sphere with Default Color Map');
-% xlabel('X');
-% ylabel('Y');
-% zlabel('Z');
+
+pcshow([x(:),y(:),z(:)]);
+title('Sphere with Default Color Map');
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
 
 ptCloud = pointCloud([x(:), y(:), z(:)])
-
+% pcshow(ptCloud)
 %znajdz plaszczyzne stolu
 %wykryc sfere, podac jej romiar
